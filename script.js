@@ -1,6 +1,12 @@
 document.getElementById('dataForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío del formulario
 
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (recaptchaResponse.length === 0) {
+        alert("Por favor, verifica que no eres un robot.");
+        return;
+    }
+
     const name = document.getElementById('name').value;
     const lastname = document.getElementById('lastname').value;
     const email = document.getElementById('email').value;
@@ -36,6 +42,7 @@ document.getElementById('deleteBtn').addEventListener('click', function() {
         document.getElementById('dataForm').reset();
         document.getElementById('output').style.display = 'none';
         document.getElementById('actionButtons').style.display = 'none';
+        grecaptcha.reset(); // Reinicia el reCAPTCHA
     }
 });
 
@@ -52,3 +59,4 @@ function enableForm() {
     document.getElementById('email').disabled = false;
     document.getElementById('color').disabled = false;
 }
+
