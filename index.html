@@ -4,16 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Elegante</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="6LefjiQqAAAAAHQWW7NHrI1-330GQjUW9RhA_bwp"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
-
     <div class="form-container">
         <h1>Registro de Datos</h1>
         <form id="dataForm">
@@ -42,6 +35,8 @@
                     <option value="#ffffff">Blanco</option>
                 </select>
             </div>
+            <!-- Aquí se agrega reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="TU_CLAVE_DEL_SITIO"></div>
             <button type="submit">Guardar Datos</button>
         </form>
         <div id="output" class="output"></div>
@@ -50,6 +45,7 @@
             <button id="deleteBtn">Borrar Registro</button>
         </div>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
 </body>
 </html>
